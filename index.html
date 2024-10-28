@@ -10,14 +10,14 @@
 <body class="bg-indigo-950">
   <main>
     <section class="bg-indigo-900 bg-gradient-to-b from-indigo-950 to-indigo-900">
-      <div class="container mx-auto h-full flex flex-col relative">
+      <div class="container mx-auto h-full flex flex-col relative pb-10">
         <nav class="py-4 px-8 absolute top-0 left-0 right-0">
           <div class="flex items-center justify-between">
             <div class="flex items-center z-10">
               <img src="./assets/images/software-dynamics-logo.png" alt="Logo" class="h-15">
             </div>
 
-            <div class="flex space-x-2 z-10">
+            <div class="flex space-x-4 md:space-x-2 z-10 relative top-4 left-3 md:left-0 md:top-0">
               <button class="hover:scale-110 transform transition">
                 <img src="https://flagcdn.com/w40/us.png" alt="English" class="w-6 h-4">
               </button>
@@ -29,11 +29,11 @@
         </nav>
 
         <div class="flex flex-1 relative">
-          <div class="w-1/3 text-white flex flex-col justify-center p-8 space-y-4">
-            <h1 class="font-bold leading-[3rem]">
-							<span class="text-[6.3rem] text-yellow-400 tracking-[0.5rem]">WEBSITE</span>
+          <div class="full md:w-1/3 text-white flex flex-col justify-center items-center md:items-start p-8 space-y-4">
+            <h1 class="font-bold leading-[3rem] mt-32 md:mt-0 text-center">
+							<span class="text-[4.3rem] md:text-[6.3rem] text-yellow-400 tracking-[0.5rem]">WEBSITE</span>
 							<br>
-							<span class="text-6xl tracking-[0.3rem]">
+							<span class="text-3xl md:text-6xl tracking-[0.3rem]">
 								DEVELOPMENT
 							</span>
 						</h1>
@@ -54,7 +54,7 @@
             </button>
           </div>
 
-          <div class="w-2/3">
+          <div class="w-2/3 hidden md:block">
             <img 
               src="./assets/images/banner-img.png" 
               alt="Banner Image" 
@@ -63,8 +63,8 @@
           </div>
         </div>
 
-				<img src="./assets/images/ornament.png" alt="Ornament" class="ornament absolute top-[3.6rem] left-80">
-				<img src="./assets/images/ornament-circles.png" alt="Ornament circles" class="ornament-circles absolute bottom-10 left-10">
+				<img src="./assets/images/ornament.png" alt="Ornament" class="ornament absolute top-[3.6rem] left-80 hidden  md:d-block">
+				<img src="./assets/images/ornament-circles.png" alt="Ornament circles" class="ornament-circles absolute bottom-3 hidden md:d-block bottom-10 left-10">
       </div>
     </section>
 
