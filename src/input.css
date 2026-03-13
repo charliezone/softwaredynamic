@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-dark: #0A0F1E;
+  --color-bg-dark-lighter: #101729;
+  --color-accent-teal: #00E5FF;
+  --color-accent-teal-hover: #00b8cc;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #CBD5E1;
+  --color-card-slate: #1E293B;
+  --color-card-slate-hover: #263044;
+  --color-border-slate: #334155;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-teal);
+    color: var(--color-bg-dark);
+  }
+}
+
