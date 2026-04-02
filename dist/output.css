@@ -311,6 +311,9 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
@@ -1298,6 +1301,13 @@
       }
     }
   }
+  .hover\:gap-2 {
+    &:hover {
+      @media (hover: hover) {
+        gap: calc(var(--spacing) * 2);
+      }
+    }
+  }
   .hover\:border-accent-teal\/40 {
     &:hover {
       @media (hover: hover) {
@@ -2118,16 +2128,6 @@
       --tw-backdrop-invert: initial;
       --tw-backdrop-opacity: initial;
       --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
-      --tw-duration: initial;
-      --tw-ease: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
-    }
-  }
-}
-al;
       --tw-backdrop-sepia: initial;
       --tw-duration: initial;
       --tw-ease: initial;
