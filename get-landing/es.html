@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tu web profesional en 48 horas por $400. Diseño, dominio, hosting de alta velocidad y email corporativo incluido. Sin letras pequeñas.">
+  <meta name="theme-color" content="#0A0F1E">
+  <title>Web Profesional en 48 Horas por $400 | Software Dynamic</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../dist/output.css">
+
+  <style>
+    .popup-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .popup-content {
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.3s ease;
+    }
+    .popup-overlay.active .popup-content {
+      transform: scale(1) translateY(0);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-bg-dark text-text-secondary">
+
+  <!-- ============ HERO SECTION ============ -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-bg-dark via-bg-dark-lighter to-bg-dark" aria-hidden="true"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-accent-teal/10 rounded-full blur-3xl animate-pulse" aria-hidden="true"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-3xl" aria-hidden="true"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+      <!-- Software Dynamic Logo -->
+      <div class="mb-8 flex justify-center">
+        <img src="../src/logo.png" alt="Software Dynamic" class="h-10 sm:h-12 w-auto">
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="absolute top-4 right-4 sm:top-8 sm:right-8">
+        <a href="index.html" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-slate text-text-secondary text-sm hover:border-accent-teal/50 hover:text-accent-teal transition-colors">
+          <span>🇺🇸</span> English
+        </a>
+      </div>
+
+      <!-- Urgency Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 text-xs font-bold tracking-wide uppercase mb-6 animate-pulse">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        🔥 Solo Quedan 2 Cupos Esta Semana
+      </div>
+
+      <!-- Pre-headline -->
+      <p class="text-accent-teal text-sm sm:text-base font-semibold tracking-wide uppercase mb-4">
+        Dueños de Negocios en Miami: Deja de Perder Clientes Ante Competidores Con Mejores Webs
+      </p>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-primary leading-tight tracking-tight mb-6">
+        Obtén una <span class="text-accent-teal">Web Que Convierte</span> en 48 Horas
+        <span class="block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Por Solo <span class="line-through text-text-secondary/50">$500</span> <span class="text-yellow-400">$400</span></span>
+      </h1>
+
+      <p class="text-lg sm:text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mx-auto mb-4">
+        Dominio + Hosting + Email Profesional + Diseño Personalizado. <strong class="text-text-primary">Todo incluido.</strong>
+      </p>
+
+      <!-- Value Stack -->
+      <p class="text-sm text-text-secondary/80 mb-8">
+        Sin cuotas mensuales. Sin contratos. Sin código basura de Wix/Squarespace. <span class="text-accent-teal font-semibold">Eres dueño del 100% de tu sitio.</span>
+      </p>
+
+      <!-- Main CTA - Mobile First Design -->
+      <a href="https://wa.me/17863709532?text=¡Hola!%20Vi%20tu%20anuncio%20en%20Facebook%20y%20me%20interesa%20el%20paquete%20de%20web%20por%20$400!" target="_blank" rel="noopener noreferrer" class="group inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 rounded-2xl sm:rounded-xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:shadow-xl hover:shadow-[#25D366]/30 transition-all duration-300">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="text-center sm:text-left">¡Sí! Quiero Mi Web Ahora</span>
+        <svg class="hidden sm:block w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+
+      <p class="mt-4 text-xs text-text-secondary/60">💬 Respuesta en menos de 2 horas • Sin compromiso • WhatsApp Directo</p>
+
+      <!-- Trust Indicators -->
+      <div class="mt-10 pt-8 border-t border-border-slate/50">
+        <p class="text-xs text-text-secondary/50 uppercase tracking-wider mb-4">Confianza de negocios en Miami</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-text-secondary">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong class="text-text-primary">Código a Mano</strong> Sin Plantillas</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong class="text-text-primary">48h</strong> Entrega Garantizada</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong class="text-text-primary">100%</strong> Satisfacción</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANTI-AGENCY PAIN POINT ============ -->
+  <section class="relative py-16 md:py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-dark to-red-950/20" aria-hidden="true"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent" aria-hidden="true"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-red-400 text-sm font-semibold tracking-wide uppercase mb-3">⚠️ La Verdad "Anti-Agencia"</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-4">
+          Deja de Pagar <span class="text-red-400">$2,000+</span> por Webs Lentas e Infladas
+        </h2>
+        <p class="text-lg text-text-secondary leading-relaxed max-w-3xl mx-auto">
+          Las agencias tradicionales cobran <strong class="text-text-primary">miles de dólares</strong> por sitios hechos con plantillas pesadas y constructores de páginas. ¿El resultado? <strong class="text-red-400">Sitios lentos que dañan tu posicionamiento en Google</strong> y ahuyentan clientes.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-5 text-center">
+          <img src="img/money-burn.svg" alt="Dinero desperdiciado" class="w-12 h-12 mx-auto mb-3 opacity-80">
+          <h3 class="font-bold text-red-400 mb-1">$2,000 - $5,000+</h3>
+          <p class="text-sm text-text-secondary">Lo que cobran las agencias por landing pages básicas</p>
+        </div>
+        <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-5 text-center">
+          <img src="img/slow-loading.svg" alt="Carga lenta" class="w-12 h-12 mx-auto mb-3 opacity-80">
+          <h3 class="font-bold text-red-400 mb-1">3-8 Segundos</h3>
+          <p class="text-sm text-text-secondary">Tiempo de carga con Wix, Elementor, Squarespace</p>
+        </div>
+        <div class="rounded-xl border border-red-500/20 bg-red-500/5 p-5 text-center">
+          <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+            <svg class="w-10 h-10 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-bold text-red-400 mb-1">2-4 Semanas</h3>
+          <p class="text-sm text-text-secondary">Tiempo de entrega típico de agencias</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ANTI-BUILDER ADVANTAGE ============ -->
+  <section class="relative py-16 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-bg-dark-lighter" aria-hidden="true"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-teal/30 to-transparent" aria-hidden="true"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-accent-teal text-sm font-semibold tracking-wide uppercase mb-3">✨ Nuestra Solución</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-4">
+          La Ventaja "Anti-Constructor"
+        </h2>
+        <p class="text-lg text-text-secondary leading-relaxed max-w-3xl mx-auto">
+          Escribimos <strong class="text-accent-teal">HTML limpio, codificado a mano</strong> que carga instantáneamente. Sin constructores inflados. Sin cuotas mensuales. Solo webs rápidas y profesionales que <strong class="text-text-primary">convierten visitantes en clientes</strong>.
+        </p>
+      </div>
+
+      <!-- Visual Comparison -->
+      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <!-- Bad: Page Builders -->
+        <div class="rounded-2xl border-2 border-red-500/30 bg-gradient-to-br from-red-950/30 to-bg-dark p-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-xl bg-red-500/20 flex items-center justify-center">
+              <img src="img/slow-loading.svg" alt="Lento" class="w-10 h-10">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-red-400">❌ Constructores de Páginas</h3>
+              <p class="text-sm text-text-secondary">Wix, Squarespace, Elementor</p>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="text-text-secondary"><strong class="text-red-400">Lento:</strong> 3-8 segundos de carga (usuarios se van después de 3s)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="text-text-secondary"><strong class="text-red-400">Inflado:</strong> 2-5MB de código innecesario</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="text-text-secondary"><strong class="text-red-400">Mal SEO:</strong> Google penaliza sitios lentos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-red-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              <span class="text-text-secondary"><strong class="text-red-400">Atrapado:</strong> Cuotas mensuales para siempre ($15-50/mes)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Good: Our Code -->
+        <div class="rounded-2xl border-2 border-accent-teal/30 bg-gradient-to-br from-accent-teal/10 to-bg-dark p-6">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-14 h-14 rounded-xl bg-accent-teal/20 flex items-center justify-center">
+              <img src="img/rocket.svg" alt="Rápido" class="w-10 h-10">
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-accent-teal">✓ Nuestros Sitios Codificados a Mano</h3>
+              <p class="text-sm text-text-secondary">HTML Puro + Tailwind CSS</p>
+            </div>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-text-secondary"><strong class="text-accent-teal">Ultra Rápido:</strong> Menos de 1 segundo de carga</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-text-secondary"><strong class="text-accent-teal">Ligero:</strong> Solo 50-100KB de código limpio</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-text-secondary"><strong class="text-accent-teal">SEO Listo:</strong> Google ama los sitios rápidos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-accent-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <span class="text-text-secondary"><strong class="text-accent-teal">Es Tuyo:</strong> Un pago, sin cuotas mensuales</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Speed Comparison Visual -->
+      <div class="rounded-2xl border border-border-slate bg-card-slate p-6 md:p-8">
+        <h3 class="text-lg font-bold text-text-primary text-center mb-6">⚡ Comparación de Velocidad: Tiempo de Carga</h3>
+        <div class="space-y-4">
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-red-400 font-medium">Wix / Squarespace / Elementor</span>
+              <span class="text-red-400">5.2s prom</span>
+            </div>
+            <div class="h-4 bg-bg-dark rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-red-600 to-red-400 rounded-full" style="width: 87%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span class="text-accent-teal font-medium">Nuestros Sitios Codificados a Mano</span>
+              <span class="text-accent-teal">0.8s prom</span>
+            </div>
+            <div class="h-4 bg-bg-dark rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-accent-teal to-green-400 rounded-full" style="width: 13%"></div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-xs text-text-secondary/60 mt-4">Basado en mediciones de Google PageSpeed Insights</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INCLUDED ============ -->
+  <section class="relative py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-accent-teal text-sm font-semibold tracking-wide uppercase mb-3">Oferta Sin Fricción</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-4">
+          Qué Está Incluido
+        </h2>
+        <p class="text-lg text-text-secondary">Todo lo que necesitas para lanzar tu presencia online. Sin sorpresas.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Item 1 -->
+        <div class="rounded-2xl border border-border-slate bg-card-slate p-6 text-center hover:border-accent-teal/40 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-accent-teal/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">Landing Page Optimizada para Ventas</h3>
+          <p class="text-sm text-text-secondary">Diseñada para convertir visitantes en clientes.</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="rounded-2xl border border-border-slate bg-card-slate p-6 text-center hover:border-accent-teal/40 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-accent-teal/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">1 Año de Dominio .com Gratis</h3>
+          <p class="text-sm text-text-secondary">Registrado a tu nombre. Es 100% tuyo.</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="rounded-2xl border border-border-slate bg-card-slate p-6 text-center hover:border-accent-teal/40 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-accent-teal/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">Hosting Web Premium de Alta Velocidad</h3>
+          <p class="text-sm text-text-secondary">Servidores rápidos para carga instantánea.</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="rounded-2xl border border-border-slate bg-card-slate p-6 text-center hover:border-accent-teal/40 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-accent-teal/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-7 h-7 text-accent-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-text-primary mb-2">Correo Corporativo Profesional</h3>
+          <p class="text-sm text-text-secondary">tu@tunegocio.com luce profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-bg-dark-lighter" aria-hidden="true"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-teal/30 to-transparent" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-teal/30 to-transparent" aria-hidden="true"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-accent-teal text-sm font-semibold tracking-wide uppercase mb-3">Nuestro Trabajo</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-4">
+          Sitios Reales. Resultados Reales.
+        </h2>
+        <p class="text-lg text-text-secondary">Mira lo que hemos construido para negocios como el tuyo.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Portfolio Item 1 -->
+        <article class="group rounded-2xl border border-border-slate bg-card-slate overflow-hidden hover:border-accent-teal/40 hover:shadow-xl hover:shadow-accent-teal/10 transition-all duration-300">
+          <div class="aspect-video bg-gradient-to-br from-blue-900/50 to-purple-900/50 relative overflow-hidden">
+            <img src="img/mave-services.png" alt="Vista previa del sitio Mave Services" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 px-2 py-1 rounded bg-green-500/90 text-white text-xs font-bold">✓ Sitio Activo</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-text-primary mb-2">Mave Services</h3>
+            <p class="text-text-secondary text-sm mb-4">Preparación de impuestos y contabilidad. <strong class="text-accent-teal">+200% más leads</strong> después de lanzar su nuevo sitio.</p>
+            <a href="https://maveservices.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-accent-teal text-sm font-semibold group-hover:gap-2 transition-all">
+              Ver Sitio en Vivo
+              <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Portfolio Item 2 -->
+        <article class="group rounded-2xl border border-border-slate bg-card-slate overflow-hidden hover:border-accent-teal/40 hover:shadow-xl hover:shadow-accent-teal/10 transition-all duration-300">
+          <div class="aspect-video bg-gradient-to-br from-green-900/50 to-blue-900/50 relative overflow-hidden">
+            <img src="img/us-auto-inspection.png" alt="Vista previa del sitio US Auto Inspection" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 px-2 py-1 rounded bg-green-500/90 text-white text-xs font-bold">✓ Sitio Activo</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-text-primary mb-2">US Auto Inspection</h3>
+            <p class="text-text-secondary text-sm mb-4">Servicio de inspección de autos. <strong class="text-accent-teal">Reservas aumentaron 150%</strong> con diseño mobile-first.</p>
+            <a href="https://www.usautoinspection.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-accent-teal text-sm font-semibold group-hover:gap-2 transition-all">
+              Ver Sitio en Vivo
+              <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ SECTION ============ -->
+  <section class="relative py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-accent-teal text-sm font-semibold tracking-wide uppercase mb-3">¿Preguntas?</p>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight">
+          Preguntas Frecuentes
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item rounded-xl border border-border-slate bg-card-slate overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-text-primary">¿Hay cargos mensuales ocultos?</span>
+            <svg class="faq-icon w-5 h-5 text-accent-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-text-secondary">No, es un pago único de $400. El primer año de hosting y dominio está incluido. A partir del segundo año solo pagas las renovaciones estándar.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item rounded-xl border border-border-slate bg-card-slate overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-text-primary">¿El dominio me pertenece?</span>
+            <svg class="faq-icon w-5 h-5 text-accent-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-text-secondary">Sí, el dominio se registra a tu nombre o al de tu negocio. Eres el dueño absoluto.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item rounded-xl border border-border-slate bg-card-slate overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-text-primary">¿Qué pasa si ya tengo un dominio?</span>
+            <svg class="faq-icon w-5 h-5 text-accent-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-text-secondary">¡No hay problema! Podemos conectar tu dominio existente a tu nueva landing page sin costo adicional.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item rounded-xl border border-border-slate bg-card-slate overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-semibold text-text-primary">¿Cómo se realiza el pago?</span>
+            <svg class="faq-icon w-5 h-5 text-accent-teal shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p class="px-5 pb-5 text-text-secondary">Se requiere un pago inicial para comenzar el proyecto y el resto al momento de la entrega y aprobación de la web.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA SECTION ============ -->
+  <section id="final-cta" class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-bg-dark-lighter via-bg-dark to-bg-dark-lighter" aria-hidden="true"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-teal/30 to-transparent" aria-hidden="true"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent-teal/5 rounded-full blur-3xl" aria-hidden="true"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 text-xs font-semibold tracking-wide uppercase mb-6">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+        Disponibilidad Limitada
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary tracking-tight mb-6">
+        Solo aceptamos <span class="text-accent-teal">3 nuevos proyectos</span> por semana para garantizar calidad.
+      </h2>
+
+      <p class="text-lg text-text-secondary leading-relaxed mb-10 max-w-2xl mx-auto">
+        No dejes que tu competencia se adelante. Asegura tu lugar ahora y ten tu web profesional en línea en 48 horas.
+      </p>
+
+      <a href="https://wa.me/17863709532?text=¡Hola!%20Me%20interesa%20el%20paquete%20de%20landing%20page%20por%20$400." target="_blank" rel="noopener noreferrer" class="group inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 rounded-2xl sm:rounded-xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:shadow-xl hover:shadow-[#25D366]/30 transition-all duration-300">
+        <svg class="w-6 h-6 sm:w-7 sm:h-7 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span>Reservar mi Lugar por WhatsApp</span>
+      </a>
+
+      <p class="mt-6 text-sm text-text-secondary/60">
+        © 2026 Software Dynamic LLC. Todos los derechos reservados.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ DISCOUNT POP-UP ============ -->
+  <div id="discount-popup" class="popup-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="popup-content relative max-w-md w-full rounded-2xl border border-accent-teal/30 bg-bg-dark-lighter p-8 text-center shadow-2xl">
+      <!-- Close Button -->
+      <button id="popup-close" class="absolute top-4 right-4 p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-card-slate transition-colors" aria-label="Cerrar popup">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Discount Badge -->
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-yellow-500/20 mb-6">
+        <span class="text-2xl font-extrabold text-yellow-400">10%</span>
+      </div>
+
+      <h3 class="text-2xl font-extrabold text-text-primary mb-3">
+        🎉 ¡Espera! Oferta Especial Solo Para Ti
+      </h3>
+
+      <p class="text-text-secondary mb-6">
+        Paga hoy y obtén <strong class="text-yellow-400">10% de descuento</strong> — ¡solo <strong class="text-text-primary">$360</strong> por todo! Esta oferta expira cuando cierres esta página.
+      </p>
+
+      <a href="https://wa.me/17863709532?text=¡Hola!%20Quiero%20reclamar%20el%2010%25%20de%20descuento%20en%20el%20paquete%20de%20landing%20page%20de%20$400!" target="_blank" rel="noopener noreferrer" class="group inline-flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full px-5 py-4 rounded-2xl bg-yellow-500 text-black font-bold text-base sm:text-lg hover:bg-yellow-400 hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span>Reclamar 10% de Descuento</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ VANILLA JAVASCRIPT ============ -->
+  <script>
+    (function() {
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        trigger.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          // Close all
+          faqItems.forEach(i => i.classList.remove('open'));
+          // Open clicked if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+          // Update aria
+          trigger.setAttribute('aria-expanded', !isOpen);
+        });
+      });
+
+      // Discount Pop-up (scroll trigger, once per session)
+      const popup = document.getElementById('discount-popup');
+      const popupClose = document.getElementById('popup-close');
+      const finalCta = document.getElementById('final-cta');
+      let popupShown = sessionStorage.getItem('popupShown');
+
+      function showPopup() {
+        if (!popupShown) {
+          popup.classList.add('active');
+          sessionStorage.setItem('popupShown', 'true');
+          popupShown = true;
+        }
+      }
+
+      function hidePopup() {
+        popup.classList.remove('active');
+      }
+
+      // Close button
+      popupClose.addEventListener('click', hidePopup);
+
+      // Close on overlay click
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) hidePopup();
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') hidePopup();
+      });
+
+      // Intersection Observer for scroll trigger
+      if (!popupShown && finalCta) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              showPopup();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+
+        observer.observe(finalCta);
+      }
+    })();
+  </script>
+</body>
+</html>
