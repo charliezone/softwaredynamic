@@ -106,7 +106,7 @@
          target="_blank" 
          rel="noopener noreferrer"
          class="group inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg shadow-[#25D366]/30 transition-all duration-300 mb-6"
-         onclick="fbq('track', 'Lead', {content_name: 'Hero CTA', value: 400, currency: 'USD'});">
+         data-cta="hero" onclick="fbq('track', 'Lead', {content_name: 'Hero CTA', value: 400, currency: 'USD'});">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
@@ -146,7 +146,7 @@
   </section>
 
   <!-- ============ FAST BENEFITS ============ -->
-  <section class="px-4 py-16 bg-bg-dark-lighter">
+  <section data-section="benefits" class="px-4 py-16 bg-bg-dark-lighter">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-2xl sm:text-3xl font-bold text-text-primary text-center mb-8">
         Why do you need a professional website?
@@ -196,7 +196,7 @@
            target="_blank" 
            rel="noopener noreferrer"
            class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
-           onclick="fbq('track', 'Lead', {content_name: 'After Benefits CTA', value: 400, currency: 'USD'});">
+           data-cta="benefits" onclick="fbq('track', 'Lead', {content_name: 'After Benefits CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
@@ -207,7 +207,7 @@
   </section>
 
   <!-- ============ PORTFOLIO / EXAMPLES (MOVED UP) ============ -->
-  <section class="px-4 py-20">
+  <section data-section="portfolio" class="px-4 py-20">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
         <p class="text-accent-teal text-sm font-semibold uppercase mb-2">Real Businesses</p>
@@ -219,7 +219,7 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Example 1 -->
-        <a href="https://maveservices.com/" target="_blank" rel="noopener noreferrer" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
+        <a href="https://maveservices.com/" target="_blank" rel="noopener noreferrer" data-portfolio="Mave Services" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
           <img src="img/mave-services.png" alt="Mave Services" class="w-full h-48 object-cover">
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
@@ -232,7 +232,7 @@
         </a>
         
         <!-- Example 2 -->
-        <a href="https://www.usautoinspection.com/" target="_blank" rel="noopener noreferrer" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
+        <a href="https://www.usautoinspection.com/" target="_blank" rel="noopener noreferrer" data-portfolio="US Auto Inspection" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
           <img src="img/us-auto-inspection.png" alt="US Auto Inspection" class="w-full h-48 object-cover">
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
@@ -245,7 +245,7 @@
         </a>
         
         <!-- Example 3 -->
-        <a href="https://jirisclothing.com" target="_blank" rel="noopener noreferrer" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
+        <a href="https://jirisclothing.com" target="_blank" rel="noopener noreferrer" data-portfolio="Jirsi's Clothing" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
           <img src="img/jiris.png" alt="Jirsi's Clothing" class="w-full h-48 object-cover">
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
@@ -286,7 +286,7 @@
            target="_blank" 
            rel="noopener noreferrer"
            class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
-           onclick="fbq('track', 'Lead', {content_name: 'After Examples CTA', value: 400, currency: 'USD'});">
+           data-cta="portfolio" onclick="fbq('track', 'Lead', {content_name: 'After Examples CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
@@ -359,7 +359,7 @@
   </section>
 
   <!-- ============ FREE OFFER STRATEGY (NEW SECTION) ============ -->
-  <section class="px-4 py-20">
+  <section data-section="free_offer" class="px-4 py-20">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -399,7 +399,7 @@
            target="_blank" 
            rel="noopener noreferrer"
            class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
-           onclick="fbq('track', 'Lead', {content_name: 'Free Offer CTA', value: 400, currency: 'USD'});">
+           data-cta="free_offer" onclick="fbq('track', 'Lead', {content_name: 'Free Offer CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
           </svg>
@@ -410,7 +410,7 @@
   </section>
 
   <!-- ============ FAQ (CONVERSION-FOCUSED) ============ -->
-  <section class="px-4 py-16 bg-bg-dark-lighter">
+  <section data-section="faq" class="px-4 py-16 bg-bg-dark-lighter">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -531,7 +531,7 @@
          target="_blank" 
          rel="noopener noreferrer"
          class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg shadow-[#25D366]/30 transition-all duration-300 mb-6"
-         onclick="fbq('track', 'Lead', {content_name: 'Final CTA', value: 400, currency: 'USD'});">
+         data-cta="final" onclick="fbq('track', 'Lead', {content_name: 'Final CTA', value: 400, currency: 'USD'});">
         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
@@ -554,7 +554,7 @@
        target="_blank" 
        rel="noopener noreferrer"
        class="flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20BD5A] shadow-lg transition-all duration-300"
-       onclick="fbq('track', 'Contact', {content_name: 'Sticky Mobile CTA'});">
+       data-cta="sticky_mobile" onclick="fbq('track', 'Contact', {content_name: 'Sticky Mobile CTA'});">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
       </svg>
@@ -568,44 +568,148 @@
      rel="noopener noreferrer"
      class="hidden md:flex fixed bottom-6 right-6 z-40 items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 hover:scale-110 hover:shadow-xl transition-all duration-300"
      aria-label="Contact via WhatsApp"
-     onclick="fbq('track', 'Contact', {content_name: 'Floating Button'});">
+     data-cta="floating_button" onclick="fbq('track', 'Contact', {content_name: 'Floating Button'});">
     <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
     </svg>
   </a>
 
-  <!-- ============ JAVASCRIPT ============ -->
+  <!-- ============ JAVASCRIPT (ANALYTICS + UX) ============ -->
   <script>
     (function() {
-      // FAQ Accordion
-      const faqItems = document.querySelectorAll('.faq-item');
-      faqItems.forEach(item => {
-        const trigger = item.querySelector('.faq-trigger');
-        trigger.addEventListener('click', () => {
-          const isOpen = item.classList.contains('open');
-          faqItems.forEach(i => i.classList.remove('open'));
+      // ========================================
+      // TRACKING HELPER
+      // ========================================
+      function trackGA4(eventName, params) {
+        if (typeof gtag === 'function') gtag('event', eventName, params);
+      }
+
+      // ========================================
+      // ENGAGEMENT QUALITY SCORING
+      // ========================================
+      var _eng = { scroll50: false, faqOpen: false, ctaClick: false, portfolioView: false };
+      var _engSent = false;
+
+      function checkEngagement() {
+        if (_engSent) return;
+        var score = Object.values(_eng).filter(Boolean).length;
+        if (score >= 3) {
+          _engSent = true;
+          trackGA4('high_engagement', {
+            engagement_score: score,
+            scroll50: _eng.scroll50,
+            faq_open: _eng.faqOpen,
+            cta_click: _eng.ctaClick,
+            portfolio_view: _eng.portfolioView
+          });
+        }
+      }
+
+      // ========================================
+      // A) CTA / LEAD TRACKING (GA4)
+      // ========================================
+      document.querySelectorAll('[data-cta]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var loc = this.getAttribute('data-cta');
+          if (loc === 'floating_button') {
+            trackGA4('contact_click', { cta_location: loc });
+          } else if (loc === 'sticky_mobile') {
+            trackGA4('generate_lead', { cta_location: loc });
+          } else {
+            trackGA4('generate_lead', { cta_location: loc, value: 400, currency: 'USD' });
+          }
+          _eng.ctaClick = true;
+          checkEngagement();
+        });
+      });
+
+      // ========================================
+      // B) FAQ ACCORDION + GA4 TRACKING
+      // ========================================
+      var faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function(item) {
+        var trigger = item.querySelector('.faq-trigger');
+        trigger.addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+          faqItems.forEach(function(i) { i.classList.remove('open'); });
           if (!isOpen) {
             item.classList.add('open');
+            var question = trigger.querySelector('span').textContent.trim();
+            trackGA4('faq_open', { question: question });
+            _eng.faqOpen = true;
+            checkEngagement();
           }
           trigger.setAttribute('aria-expanded', !isOpen);
         });
       });
 
-      // Sticky Mobile CTA - Show after scrolling
-      const stickyCta = document.querySelector('.sticky-cta');
-      let lastScroll = 0;
-      
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 500) {
-          stickyCta.classList.add('visible');
-        } else {
-          stickyCta.classList.remove('visible');
-        }
-        
-        lastScroll = currentScroll;
+      // ========================================
+      // C) PORTFOLIO CLICK TRACKING
+      // ========================================
+      document.querySelectorAll('[data-portfolio]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          trackGA4('portfolio_click', {
+            portfolio_name: this.getAttribute('data-portfolio'),
+            portfolio_url: this.href
+          });
+        });
       });
+
+      // ========================================
+      // D) SCROLL MILESTONES + STICKY CTA
+      // ========================================
+      var _scrollFired = { 50: false, 90: false };
+      var stickyCta = document.querySelector('.sticky-cta');
+
+      window.addEventListener('scroll', function() {
+        var pct = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+
+        if (!_scrollFired[50] && pct >= 50) {
+          _scrollFired[50] = true;
+          trackGA4('scroll_50', { percent_scrolled: 50 });
+          _eng.scroll50 = true;
+          checkEngagement();
+        }
+        if (!_scrollFired[90] && pct >= 90) {
+          _scrollFired[90] = true;
+          trackGA4('scroll_90', { percent_scrolled: 90 });
+        }
+
+        if (stickyCta) {
+          if (window.pageYOffset > 500) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      });
+
+      // ========================================
+      // E) SECTION VISIBILITY (IntersectionObserver)
+      // ========================================
+      if ('IntersectionObserver' in window) {
+        var _seen = {};
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var name = entry.target.getAttribute('data-section');
+              if (name && !_seen[name]) {
+                _seen[name] = true;
+                trackGA4('section_view', { section_name: name });
+                if (name === 'portfolio') {
+                  _eng.portfolioView = true;
+                  checkEngagement();
+                }
+                obs.unobserve(entry.target);
+              }
+            }
+          });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('[data-section]').forEach(function(el) {
+          obs.observe(el);
+        });
+      }
     })();
   </script>
 </body>
