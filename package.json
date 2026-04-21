@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Software Dynamic LLC - Agency Website",
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
-    "dev:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build:css": "npx @tailwindcss/cli --input ./src/input.css --output ./dist/output.css --content './get-landing/**/*.html' --content './src/**/*.html' --minify",
+    "dev:css": "npx @tailwindcss/cli --input ./src/input.css --output ./dist/output.css --content './get-landing/**/*.html' --content './src/**/*.html' --watch",
     "dev": "npx concurrently \"npm run dev:css\" \"npx live-server --port=3000 --no-browser\"",
     "build": "npm run build:css"
   },
