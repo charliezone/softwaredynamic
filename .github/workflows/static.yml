@@ -40,6 +40,11 @@ jobs:
         run: npm ci
       - name: Build Tailwind CSS
         run: npm run build
+      - name: Prune files not needed for Pages
+        run: |
+          rm -rf node_modules .git .github audit-screenshots src \
+                 package.json package-lock.json tailwind.config.js \
+                 README.md .gitignore
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
