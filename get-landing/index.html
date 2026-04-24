@@ -60,6 +60,43 @@
       font-style: italic;
       font-weight: 600;
     }
+
+    /* Live online dot */
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.7);
+      animation: livePulse 1.8s infinite;
+    }
+    @keyframes livePulse {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+
+    /* CTA pulse ring (subtle) */
+    .cta-pulse { position: relative; isolation: isolate; }
+    .cta-pulse::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: 0 0 0 0 rgba(37,211,102,0.45);
+      animation: ctaPulse 2.4s ease-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes ctaPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+      70% { box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cta-pulse::before { animation: none; }
+    }
   </style>
 </head>
 <body class="bg-bg-dark text-text-secondary antialiased">
@@ -88,69 +125,103 @@
   </div>
 
   <!-- ============ 1. HERO SECTION ============ -->
-  <section class="relative px-4 pt-16 pb-10 overflow-hidden">
+  <section class="relative px-4 pt-8 pb-8 sm:pt-16 sm:pb-10 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-bg-dark via-bg-dark-lighter to-bg-dark"></div>
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-96 bg-accent-teal/10 rounded-full blur-3xl"></div>
 
     <div class="relative max-w-2xl mx-auto text-center">
-      <div class="mb-5">
-        <img src="../src/logo.png" alt="Software Dynamic" class="h-10 mx-auto">
+      <!-- Logo -->
+      <div class="mb-3 sm:mb-5">
+        <img src="../src/logo.png" alt="Software Dynamic" class="h-8 sm:h-10 mx-auto">
       </div>
 
       <!-- Micro Trust Badge -->
-      <div class="inline-flex flex-wrap justify-center items-center gap-2 px-3 py-1.5 rounded-full border border-accent-teal/30 bg-accent-teal/5 text-xs sm:text-sm text-text-secondary mb-5">
-        <span class="text-accent-teal">🏛️</span>
-        <span>Florida Registered LLC</span>
+      <div class="inline-flex flex-wrap justify-center items-center gap-x-2 gap-y-1 px-3 py-1.5 rounded-full border border-accent-teal/30 bg-accent-teal/5 text-[11px] sm:text-xs text-text-secondary mb-3 sm:mb-5">
+        <span>🏛️ Florida Registered LLC</span>
         <span class="text-text-secondary/40">·</span>
-        <span>📍 Miami, FL</span>
+        <span>🔒 Stripe</span>
+        <span class="text-text-secondary/40">·</span>
+        <span>❌ No monthly fees</span>
       </div>
 
+      <!-- Emotional pre-headline -->
+      <p class="text-xs sm:text-base font-semibold text-red-400/90 mb-2 sm:mb-3">
+        Every day without a website, a client picks your competitor.
+      </p>
+
       <!-- Headline -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-text-primary leading-tight mb-4">
-        Your Professional Website Live in <span class="text-accent-teal">48 Hours</span> — or You Don't Pay.
+      <h1 class="text-[28px] sm:text-4xl md:text-5xl font-black text-text-primary leading-[1.15] mb-3 sm:mb-4">
+        Get More Clients With a <span class="text-accent-teal">Professional Website in 48h</span>
       </h1>
 
       <!-- Subheadline -->
-      <p class="text-base sm:text-lg text-text-secondary mb-6 leading-relaxed">
-        Custom design for Miami small businesses. Domain, hosting and business email included. You only pay when you approve the result.
+      <p class="text-sm sm:text-lg text-text-secondary mb-1 sm:mb-2 leading-relaxed">
+        One-time payment of <strong class="text-text-primary">$400</strong> or <strong class="text-text-primary">flexible installments*</strong>. Domain, hosting and business email included.
       </p>
+      <p class="text-[10px] sm:text-xs text-text-secondary/60 mb-4 sm:mb-6">*Options subject to approval by the payment provider.</p>
+
+      <!-- Scarcity badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4">
+        ⚡ Only <span class="text-yellow-200">3 projects per week</span>
+      </div>
 
       <!-- Primary CTA -->
       <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20want%20to%20see%20my%20free%20proposal"
          target="_blank"
          rel="noopener noreferrer"
-         class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg shadow-[#25D366]/30 transition-all duration-300"
+         class="cta-pulse inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/25 transition-all duration-300"
          data-cta="hero" onclick="fbq('track', 'Lead', {content_name: 'Hero CTA', value: 400, currency: 'USD'});">
-        <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+        <svg class="w-6 h-6 shrink-0" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
         <span>Get My Free Proposal</span>
       </a>
 
+      <!-- Online + response chip -->
+      <p class="mt-2.5 inline-flex items-center gap-2 text-xs text-text-secondary/85">
+        <span class="live-dot"></span> Online now · I reply in &lt;10 min
+      </p>
+
+      <!-- Mini review chip (social proof high) -->
+      <div class="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-card-slate/60 border border-border-slate text-xs text-text-secondary">
+        <span class="text-yellow-400 tracking-tight">★★★★★</span>
+        <span class="font-semibold text-text-primary">5.0</span>
+        <span class="text-text-secondary/70">· Real Miami businesses</span>
+      </div>
+
+      <!-- Secondary CTA -->
+      <div class="mt-3">
+        <a href="#portfolio"
+           class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-accent-teal/40 text-accent-teal font-semibold text-sm hover:bg-accent-teal/10 transition-colors"
+           data-cta="hero_secondary" onclick="gtag('event','view_examples_click');">
+          👀 See Real Examples
+        </a>
+      </div>
+
       <!-- Phone alternative -->
-      <p class="mt-4 text-sm text-text-secondary/80">
+      <p class="mt-3 text-xs sm:text-sm text-text-secondary/80">
         📞 Prefer to call? <a href="tel:+17863709532" class="text-accent-teal font-semibold hover:underline" onclick="fbq('track', 'Contact', {content_name: 'Hero Phone'});">+1 (786) 370-9532</a>
       </p>
 
-      <!-- Trust/Value Block -->
-      <div class="mt-8 bg-card-slate/50 backdrop-blur-sm border border-accent-teal/20 rounded-2xl p-6 space-y-3 text-left">
+      <!-- Trust/Value Block (compressed) -->
+      <div class="mt-6 sm:mt-8 bg-card-slate/50 backdrop-blur-sm border border-accent-teal/20 rounded-2xl p-4 sm:p-6 space-y-2 sm:space-y-3 text-left">
         <div class="flex items-start gap-3">
-          <span class="text-2xl">✅</span>
+          <span class="text-xl sm:text-2xl">✅</span>
           <div>
-            <p class="text-base font-semibold text-text-primary">No upfront payment. No risk.</p>
-            <p class="text-sm text-text-secondary/80">You only pay when you approve the design</p>
+            <p class="text-sm sm:text-base font-semibold text-text-primary">No upfront payment. No risk.</p>
+            <p class="text-xs sm:text-sm text-text-secondary/80">You only pay when you approve the design</p>
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="text-2xl">🎁</span>
+          <span class="text-xl sm:text-2xl">🎁</span>
           <div>
-            <p class="text-base font-semibold text-text-primary">Free visual proposal</p>
-            <p class="text-sm text-text-secondary/80">We'll show you how your website will look before you decide</p>
+            <p class="text-sm sm:text-base font-semibold text-text-primary">Free visual proposal</p>
+            <p class="text-xs sm:text-sm text-text-secondary/80">See how it will look before you decide</p>
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <span class="text-2xl">🔍</span>
+          <span class="text-xl sm:text-2xl">🔍</span>
           <div>
-            <p class="text-base font-semibold text-text-primary">Free audit if you already have a website</p>
-            <p class="text-sm text-text-secondary/80">We'll tell you what to improve to get more clients</p>
+            <p class="text-sm sm:text-base font-semibold text-text-primary">Free audit if you already have a website</p>
+            <p class="text-xs sm:text-sm text-text-secondary/80">We'll tell you what to improve for more clients</p>
           </div>
         </div>
       </div>
@@ -199,11 +270,11 @@
   </section>
 
   <!-- ============ 3. SOCIAL PROOF / TESTIMONIALS ============ -->
-  <section data-section="testimonials" class="px-4 py-16">
+  <section data-section="testimonials" class="px-4 py-12 sm:py-16">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-10">
-        <p class="text-accent-teal text-sm font-semibold uppercase mb-2">Real Clients</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+      <div class="text-center mb-8 sm:mb-10">
+        <p class="text-accent-teal text-xs sm:text-sm font-semibold uppercase mb-2">Real Clients</p>
+        <h2 class="text-xl sm:text-3xl font-bold text-text-primary mb-3">
           What our clients say about working with us
         </h2>
         <div class="flex items-center justify-center gap-1 text-yellow-400 mt-3">
@@ -212,13 +283,13 @@
           <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-star"/></svg>
           <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-star"/></svg>
           <svg class="w-5 h-5" aria-hidden="true"><use href="#icon-star"/></svg>
-          <span class="ml-2 text-sm text-text-secondary">5.0 — based on client feedback</span>
+          <span class="ml-2 text-xs sm:text-sm text-text-secondary">5.0 — based on client feedback</span>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
         <!-- Testimonial 1 -->
-        <figure class="bg-card-slate border border-border-slate rounded-2xl p-6 flex flex-col">
+        <figure class="bg-card-slate border border-border-slate rounded-2xl p-5 sm:p-6 flex flex-col">
           <div class="flex text-yellow-400 mb-3">
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
@@ -226,7 +297,7 @@
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
-          <blockquote class="text-base text-text-secondary leading-relaxed flex-1">
+          <blockquote class="text-sm sm:text-base text-text-secondary leading-relaxed flex-1">
             "I needed a serious, professional website for my firm and Software Dynamic delivered in record time. Clear process, clean result. I recommend them without hesitation."
           </blockquote>
           <figcaption class="flex items-center gap-3 mt-4 pt-4 border-t border-border-slate/50">
@@ -239,7 +310,7 @@
         </figure>
 
         <!-- Testimonial 2 -->
-        <figure class="bg-card-slate border border-border-slate rounded-2xl p-6 flex flex-col">
+        <figure class="bg-card-slate border border-border-slate rounded-2xl p-5 sm:p-6 flex flex-col">
           <div class="flex text-yellow-400 mb-3">
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
@@ -247,7 +318,7 @@
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
-          <blockquote class="text-base text-text-secondary leading-relaxed flex-1">
+          <blockquote class="text-sm sm:text-base text-text-secondary leading-relaxed flex-1">
             "Carlos understood exactly what my shop needed. The site looks amazing on mobile, which is where almost all my clients reach me. Highly recommended."
           </blockquote>
           <figcaption class="flex items-center gap-3 mt-4 pt-4 border-t border-border-slate/50">
@@ -260,7 +331,7 @@
         </figure>
 
         <!-- Testimonial 3 -->
-        <figure class="bg-card-slate border border-border-slate rounded-2xl p-6 flex flex-col">
+        <figure class="bg-card-slate border border-border-slate rounded-2xl p-5 sm:p-6 flex flex-col">
           <div class="flex text-yellow-400 mb-3">
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
@@ -268,7 +339,7 @@
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
             <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-star"/></svg>
           </div>
-          <blockquote class="text-base text-text-secondary leading-relaxed flex-1">
+          <blockquote class="text-sm sm:text-base text-text-secondary leading-relaxed flex-1">
             "The design perfectly reflects my brand's vibe. Fast, modern, and everything I asked for. I would work with them again without thinking twice."
           </blockquote>
           <figcaption class="flex items-center gap-3 mt-4 pt-4 border-t border-border-slate/50">
@@ -284,75 +355,75 @@
   </section>
 
   <!-- ============ 4. PORTFOLIO / EXAMPLES ============ -->
-  <section data-section="portfolio" class="px-4 py-16 bg-bg-dark-lighter">
+  <section id="portfolio" data-section="portfolio" class="px-4 py-12 sm:py-16 bg-bg-dark-lighter scroll-mt-20">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-10">
-        <p class="text-accent-teal text-sm font-semibold uppercase mb-2">Real Miami Businesses</p>
-        <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+      <div class="text-center mb-8 sm:mb-10">
+        <p class="text-accent-teal text-xs sm:text-sm font-semibold uppercase mb-2">Real Miami Businesses</p>
+        <h2 class="text-xl sm:text-3xl font-bold text-text-primary mb-3">
           Live websites. Real results.
         </h2>
-        <p class="text-base text-text-secondary">Click any card — you can visit the live site</p>
+        <p class="text-sm sm:text-base text-text-secondary">Click any card — visit the live site</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
         <!-- Example 1 -->
         <a href="https://maveservices.com/" target="_blank" rel="noopener noreferrer" data-portfolio="Mave Services" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
-          <img src="img/mave-services.png" alt="Mave Services" class="w-full h-48 object-cover" loading="lazy">
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              <span class="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-bold rounded-full">✓ LIVE SITE</span>
-
+          <img src="img/mave-services.png" alt="Mave Services" class="w-full h-40 sm:h-48 object-cover" loading="lazy">
+          <div class="p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span class="px-2.5 py-0.5 bg-green-500/10 border border-green-500/30 text-green-400 text-[10px] sm:text-xs font-bold rounded-full">✓ LIVE SITE</span>
             </div>
-            <h3 class="text-xl font-bold text-text-primary mb-2">Mave Services</h3>
-            <p class="text-base text-text-secondary mb-3">Accounting and tax preparation</p>
+            <h3 class="text-lg sm:text-xl font-bold text-text-primary mb-1">Mave Services</h3>
+            <p class="text-sm sm:text-base text-text-secondary mb-2">Accounting and tax preparation</p>
             <p class="text-sm text-accent-teal font-semibold">Visit live site ↗</p>
           </div>
         </a>
 
         <!-- Example 2 -->
         <a href="https://www.usautoinspection.com/" target="_blank" rel="noopener noreferrer" data-portfolio="US Auto Inspection" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
-          <img src="img/us-auto-inspection.png" alt="US Auto Inspection" class="w-full h-48 object-cover" loading="lazy">
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              <span class="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-bold rounded-full">✓ LIVE SITE</span>
-
+          <img src="img/us-auto-inspection.png" alt="US Auto Inspection" class="w-full h-40 sm:h-48 object-cover" loading="lazy">
+          <div class="p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span class="px-2.5 py-0.5 bg-green-500/10 border border-green-500/30 text-green-400 text-[10px] sm:text-xs font-bold rounded-full">✓ LIVE SITE</span>
             </div>
-            <h3 class="text-xl font-bold text-text-primary mb-2">US Auto Inspection</h3>
-            <p class="text-base text-text-secondary mb-3">Vehicle inspection service</p>
+            <h3 class="text-lg sm:text-xl font-bold text-text-primary mb-1">US Auto Inspection</h3>
+            <p class="text-sm sm:text-base text-text-secondary mb-2">Vehicle inspection service</p>
             <p class="text-sm text-accent-teal font-semibold">Visit live site ↗</p>
           </div>
         </a>
 
         <!-- Example 3 -->
         <a href="https://jirisclothing.com" target="_blank" rel="noopener noreferrer" data-portfolio="Jirsi's Clothing" class="block bg-card-slate border border-border-slate rounded-2xl overflow-hidden hover:border-accent-teal/50 transition-all duration-300 hover:scale-105">
-          <img src="img/jiris.png" alt="Jirsi's Clothing" class="w-full h-48 object-cover" loading="lazy">
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3 flex-wrap">
-              <span class="px-3 py-1 bg-green-500/10 border border-green-500/30 text-green-400 text-xs font-bold rounded-full">✓ LIVE SITE</span>
-
+          <img src="img/jiris.png" alt="Jirsi's Clothing" class="w-full h-40 sm:h-48 object-cover" loading="lazy">
+          <div class="p-5 sm:p-6">
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span class="px-2.5 py-0.5 bg-green-500/10 border border-green-500/30 text-green-400 text-[10px] sm:text-xs font-bold rounded-full">✓ LIVE SITE</span>
             </div>
-            <h3 class="text-xl font-bold text-text-primary mb-2">Jirsi's Clothing</h3>
-            <p class="text-base text-text-secondary mb-3">Urban and streetwear apparel</p>
+            <h3 class="text-lg sm:text-xl font-bold text-text-primary mb-1">Jirsi's Clothing</h3>
+            <p class="text-sm sm:text-base text-text-secondary mb-2">Urban and streetwear apparel</p>
             <p class="text-sm text-accent-teal font-semibold">Visit live site ↗</p>
           </div>
         </a>
       </div>
 
-      <div class="text-center mt-10">
+      <div class="text-center mt-8 sm:mt-10">
         <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20saw%20the%20examples%20and%20I%20want%20a%20website%20like%20these%20for%20my%20business"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
+           class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/20 transition-all duration-300"
            data-cta="portfolio" onclick="fbq('track', 'Lead', {content_name: 'After Examples CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
           <span>I Want a Website Like These</span>
         </a>
+        <p class="mt-2.5 inline-flex items-center gap-2 text-xs text-text-secondary/80 w-full justify-center">
+          <span class="live-dot"></span> Online · I reply in &lt;10 min
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ============ 5. LOSS AVERSION BLOCK ============ -->
-  <section class="px-4 py-12">
+  <section class="px-4 py-10 sm:py-12">
     <div class="max-w-3xl mx-auto">
       <div class="bg-gradient-to-br from-red-500/10 to-transparent border border-red-500/30 rounded-2xl p-6 sm:p-8 text-center">
         <p class="text-2xl sm:text-3xl font-black text-text-primary leading-tight mb-3">
@@ -366,67 +437,70 @@
   </section>
 
   <!-- ============ 6. FAST BENEFITS ============ -->
-  <section data-section="benefits" class="px-4 py-16 bg-bg-dark-lighter">
+  <section data-section="benefits" class="px-4 py-12 sm:py-16 bg-bg-dark-lighter">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl sm:text-3xl font-bold text-text-primary text-center mb-8">
+      <h2 class="text-xl sm:text-3xl font-bold text-text-primary text-center mb-6 sm:mb-8">
         Why your business needs a professional website
       </h2>
 
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div class="bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-3xl mb-3">💰</div>
-          <h3 class="text-lg font-bold text-text-primary mb-2">More new clients</h3>
-          <p class="text-base text-text-secondary">Your business available 24/7 generating leads while you sleep</p>
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <div class="bg-card-slate border border-border-slate rounded-xl p-3.5 sm:p-5">
+          <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">💰</div>
+          <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">More clients</h3>
+          <p class="text-xs sm:text-base text-text-secondary leading-snug">Your business 24/7 generating leads</p>
         </div>
 
-        <div class="bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-3xl mb-3">⚡</div>
-          <h3 class="text-lg font-bold text-text-primary mb-2">Fast loading</h3>
-          <p class="text-base text-text-secondary">Your clients don't wait. Pages that load in under 2 seconds</p>
+        <div class="bg-card-slate border border-border-slate rounded-xl p-3.5 sm:p-5">
+          <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">⚡</div>
+          <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">Fast loading</h3>
+          <p class="text-xs sm:text-base text-text-secondary leading-snug">Loads in under 2 seconds</p>
         </div>
 
-        <div class="bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-3xl mb-3">🏆</div>
-          <h3 class="text-lg font-bold text-text-primary mb-2">Professional image</h3>
-          <p class="text-base text-text-secondary">Builds trust from the first second. Stand out from your competition</p>
+        <div class="bg-card-slate border border-border-slate rounded-xl p-3.5 sm:p-5">
+          <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🏆</div>
+          <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">Professional image</h3>
+          <p class="text-xs sm:text-base text-text-secondary leading-snug">Stand out from your competition</p>
         </div>
 
-        <div class="bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-3xl mb-3">📱</div>
-          <h3 class="text-lg font-bold text-text-primary mb-2">Perfect on mobile</h3>
-          <p class="text-base text-text-secondary">80% of your clients search from their phone. Your site looks perfect</p>
+        <div class="bg-card-slate border border-border-slate rounded-xl p-3.5 sm:p-5">
+          <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">📱</div>
+          <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">Mobile perfect</h3>
+          <p class="text-xs sm:text-base text-text-secondary leading-snug">80% search from their phone</p>
         </div>
 
-        <div class="bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-3xl mb-3">✨</div>
-          <h3 class="text-lg font-bold text-text-primary mb-2">Better first impression</h3>
-          <p class="text-base text-text-secondary">You have 3 seconds to convince. We make them count</p>
+        <div class="bg-card-slate border border-border-slate rounded-xl p-3.5 sm:p-5">
+          <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">✨</div>
+          <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">First impression</h3>
+          <p class="text-xs sm:text-base text-text-secondary leading-snug">3 seconds to convince</p>
         </div>
 
-        <div class="bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-3xl mb-3">🎯</div>
-          <h3 class="text-lg font-bold text-text-primary mb-2">Converts visitors into clients</h3>
-          <p class="text-base text-text-secondary">Design focused on making your visitors actually contact you</p>
+        <div class="bg-card-slate border border-border-slate rounded-xl p-3.5 sm:p-5">
+          <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🎯</div>
+          <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-1 sm:mb-2">More conversions</h3>
+          <p class="text-xs sm:text-base text-text-secondary leading-snug">Design that makes you sell</p>
         </div>
       </div>
 
-      <div class="text-center mt-10">
+      <div class="text-center mt-8 sm:mt-10">
         <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20want%20my%20business%20to%20grow.%20Can%20you%20help%3F"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
+           class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/20 transition-all duration-300"
            data-cta="benefits" onclick="fbq('track', 'Lead', {content_name: 'After Benefits CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
           <span>I Want My Business to Grow</span>
         </a>
+        <p class="mt-2.5 inline-flex items-center gap-2 text-xs text-text-secondary/80 w-full justify-center">
+          <span class="live-dot"></span> Online · I reply in &lt;10 min
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ============ 7. FREE OFFER / RISK REVERSAL ============ -->
-  <section data-section="free_offer" class="px-4 py-16">
+  <section data-section="free_offer" class="px-4 py-12 sm:py-16">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10">
+      <div class="text-center mb-8 sm:mb-10">
         <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
           Start With No Risk
         </h2>
@@ -463,71 +537,74 @@
         <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20want%20to%20start%20with%20no%20risk"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
+           class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/20 transition-all duration-300"
            data-cta="free_offer" onclick="fbq('track', 'Lead', {content_name: 'Free Offer CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
           <span>Start With No Risk</span>
         </a>
+        <p class="mt-2.5 inline-flex items-center gap-2 text-xs text-text-secondary/80 w-full justify-center">
+          <span class="live-dot"></span> Online · I reply in &lt;10 min
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ============ 8. WHAT'S INCLUDED ============ -->
-  <section class="px-4 py-16 bg-bg-dark-lighter">
+  <section class="px-4 py-12 sm:py-16 bg-bg-dark-lighter">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
+      <div class="text-center mb-6 sm:mb-10">
+        <h2 class="text-xl sm:text-3xl font-bold text-text-primary mb-2 sm:mb-3">
           Everything you need, included
         </h2>
-        <p class="text-base text-text-secondary">One payment. No surprises. No fine print.</p>
+        <p class="text-sm sm:text-base text-text-secondary">One payment. No surprises. No fine print.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-4">
-        <div class="flex items-start gap-4 bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-2xl">🎨</div>
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <div class="flex items-start gap-2.5 sm:gap-4 bg-card-slate border border-border-slate rounded-xl p-3 sm:p-5">
+          <div class="text-lg sm:text-2xl shrink-0">🎨</div>
           <div>
-            <h3 class="text-lg font-bold text-text-primary mb-1">Custom design</h3>
-            <p class="text-base text-text-secondary">Made specifically for your business</p>
+            <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">Custom design</h3>
+            <p class="text-xs sm:text-base text-text-secondary leading-snug">Built for your business</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-2xl">🌐</div>
+        <div class="flex items-start gap-2.5 sm:gap-4 bg-card-slate border border-border-slate rounded-xl p-3 sm:p-5">
+          <div class="text-lg sm:text-2xl shrink-0">🌐</div>
           <div>
-            <h3 class="text-lg font-bold text-text-primary mb-1">Domain included</h3>
-            <p class="text-base text-text-secondary">Your name on the internet (.com, .net, etc)</p>
+            <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">Domain included</h3>
+            <p class="text-xs sm:text-base text-text-secondary leading-snug">.com, .net, in your name</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-2xl">⚡</div>
+        <div class="flex items-start gap-2.5 sm:gap-4 bg-card-slate border border-border-slate rounded-xl p-3 sm:p-5">
+          <div class="text-lg sm:text-2xl shrink-0">⚡</div>
           <div>
-            <h3 class="text-lg font-bold text-text-primary mb-1">Fast hosting</h3>
-            <p class="text-base text-text-secondary">First year free. Ultra-fast loading</p>
+            <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">Fast hosting</h3>
+            <p class="text-xs sm:text-base text-text-secondary leading-snug">First year free</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-2xl">📧</div>
+        <div class="flex items-start gap-2.5 sm:gap-4 bg-card-slate border border-border-slate rounded-xl p-3 sm:p-5">
+          <div class="text-lg sm:text-2xl shrink-0">📧</div>
           <div>
-            <h3 class="text-lg font-bold text-text-primary mb-1">Business email</h3>
-            <p class="text-base text-text-secondary">you@yourbusiness.com — more professional</p>
+            <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">Business email</h3>
+            <p class="text-xs sm:text-base text-text-secondary leading-snug">you@yourbusiness.com</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-2xl">📱</div>
+        <div class="flex items-start gap-2.5 sm:gap-4 bg-card-slate border border-border-slate rounded-xl p-3 sm:p-5">
+          <div class="text-lg sm:text-2xl shrink-0">📱</div>
           <div>
-            <h3 class="text-lg font-bold text-text-primary mb-1">Mobile optimized</h3>
-            <p class="text-base text-text-secondary">Perfect on any device</p>
+            <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">Mobile-ready</h3>
+            <p class="text-xs sm:text-base text-text-secondary leading-snug">Perfect on any screen</p>
           </div>
         </div>
 
-        <div class="flex items-start gap-4 bg-card-slate border border-border-slate rounded-xl p-5">
-          <div class="text-2xl">🚀</div>
+        <div class="flex items-start gap-2.5 sm:gap-4 bg-card-slate border border-border-slate rounded-xl p-3 sm:p-5">
+          <div class="text-lg sm:text-2xl shrink-0">🚀</div>
           <div>
-            <h3 class="text-lg font-bold text-text-primary mb-1">Delivery in 48 hours</h3>
-            <p class="text-base text-text-secondary">Your website ready in 2 days</p>
+            <h3 class="text-sm sm:text-lg font-bold text-text-primary mb-0.5 sm:mb-1">48h delivery</h3>
+            <p class="text-xs sm:text-base text-text-secondary leading-snug">Your website ready in 2 days</p>
           </div>
         </div>
       </div>
@@ -535,14 +612,36 @@
   </section>
 
   <!-- ============ 9. PRICING SECTION ============ -->
-  <section data-section="pricing" class="px-4 py-16">
+  <section data-section="pricing" class="px-4 py-12 sm:py-16">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-8">
         <p class="text-accent-teal text-sm font-semibold uppercase mb-2">Pricing</p>
         <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
-          One-time payment. Everything included.
+          Why only $400?
         </h2>
+        <p class="text-base text-text-secondary">Compare with what others charge for the same result:</p>
       </div>
+
+      <!-- Price comparison -->
+      <div class="grid grid-cols-3 gap-2 sm:gap-3 mb-6 text-center">
+        <div class="bg-card-slate/60 border border-border-slate rounded-xl p-3 sm:p-4 opacity-70">
+          <p class="text-[11px] sm:text-xs text-text-secondary/80 mb-1">Traditional agency</p>
+          <p class="text-base sm:text-xl font-black text-text-secondary line-through">$2,000+</p>
+          <p class="text-[10px] sm:text-xs text-text-secondary/60 mt-1">2-6 weeks</p>
+        </div>
+        <div class="bg-card-slate/60 border border-border-slate rounded-xl p-3 sm:p-4 opacity-70">
+          <p class="text-[11px] sm:text-xs text-text-secondary/80 mb-1">Typical freelancer</p>
+          <p class="text-base sm:text-xl font-black text-text-secondary line-through">$800+</p>
+          <p class="text-[10px] sm:text-xs text-text-secondary/60 mt-1">Variable quality</p>
+        </div>
+        <div class="bg-gradient-to-br from-accent-teal/20 to-green-500/10 border-2 border-accent-teal rounded-xl p-3 sm:p-4 relative">
+          <span class="absolute -top-2 left-1/2 -translate-x-1/2 bg-accent-teal text-bg-dark text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">You</span>
+          <p class="text-[11px] sm:text-xs text-accent-teal font-semibold mb-1">Software Dynamic</p>
+          <p class="text-lg sm:text-2xl font-black text-yellow-400">$400</p>
+          <p class="text-[10px] sm:text-xs text-text-secondary/80 mt-1">48h · All included</p>
+        </div>
+      </div>
+      <p class="text-xs text-text-secondary/70 text-center mb-8">✨ No expensive offices, no middlemen. Same professional result for less.</p>
 
       <div class="bg-gradient-to-br from-accent-teal/10 via-card-slate to-card-slate border-2 border-accent-teal/40 rounded-3xl p-8 text-center shadow-xl">
         <p class="text-base text-text-secondary/80 mb-2">Launch pricing</p>
@@ -572,17 +671,20 @@
         <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20want%20my%20professional%20website.%20Can%20you%20send%20me%20the%20payment%20link%3F"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center justify-center gap-3 w-full px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
+           class="inline-flex items-center justify-center gap-3 w-full px-8 py-4 rounded-2xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/25 transition-all duration-300"
            data-cta="pricing" onclick="fbq('track', 'Lead', {content_name: 'Pricing CTA', value: 400, currency: 'USD'});">
           <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
           <span>Start My Project</span>
         </a>
+        <p class="mt-3 inline-flex items-center gap-2 text-xs text-text-secondary/80 w-full justify-center">
+          <span class="live-dot"></span> Online · I reply in &lt;10 min
+        </p>
       </div>
     </div>
   </section>
 
   <!-- ============ 10. GUARANTEE ============ -->
-  <section data-section="guarantee" class="px-4 py-16 bg-bg-dark-lighter">
+  <section data-section="guarantee" class="px-4 py-12 sm:py-16 bg-bg-dark-lighter">
     <div class="max-w-3xl mx-auto">
       <div class="bg-gradient-to-br from-green-500/10 to-transparent border-2 border-green-500/30 rounded-3xl p-8 sm:p-10">
         <div class="flex items-center gap-3 mb-5">
@@ -595,16 +697,9 @@
           </div>
         </div>
 
-        <div class="space-y-4 text-base text-text-secondary leading-relaxed mb-8">
-          <p>
-            <strong class="text-text-primary">If you don't approve the final design, you don't pay.</strong> No fine print, no excuses.
-          </p>
-          <p>
-            And if after your website is live you're not 100% satisfied, we refund your money. No questions asked.
-          </p>
-          <p>
-            We can offer this because we know what we're doing — and because we believe a small Miami business should never take on the risk of an agency that disappears after getting paid.
-          </p>
+        <div class="space-y-3 text-base text-text-secondary leading-relaxed mb-8">
+          <p><strong class="text-text-primary">If you don't approve the design, you don't pay.</strong> No fine print.</p>
+          <p>And if you're not 100% satisfied after launch, we refund your money. No questions asked.</p>
         </div>
 
         <!-- Signature -->
@@ -624,7 +719,7 @@
           <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20saw%20the%20guarantee%20and%20I%20want%20to%20reserve%20my%20spot"
              target="_blank"
              rel="noopener noreferrer"
-             class="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20BD5A] hover:scale-105 shadow-lg transition-all duration-300"
+             class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#25D366] text-white font-bold text-base sm:text-lg hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/20 transition-all duration-300"
              data-cta="guarantee" onclick="fbq('track', 'Lead', {content_name: 'Guarantee CTA', value: 400, currency: 'USD'});">
             <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
             <span>Reserve My Spot</span>
@@ -635,7 +730,7 @@
   </section>
 
   <!-- ============ 11. FAQ ============ -->
-  <section data-section="faq" class="px-4 py-16">
+  <section data-section="faq" class="px-4 py-12 sm:py-16">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-3">
@@ -814,30 +909,42 @@
   </section>
 
   <!-- ============ 12. FINAL CTA ============ -->
-  <section class="px-4 py-20 bg-bg-dark-lighter">
+  <section class="px-4 py-14 sm:py-20 bg-bg-dark-lighter">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl sm:text-4xl font-black text-text-primary mb-5 leading-tight">
-        Let's talk <span class="text-accent-teal">30 seconds</span> on WhatsApp?
+      <!-- Scarcity pill -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-xs font-semibold mb-5">
+        ⚠️ <span class="text-yellow-200 font-black">2 spots left</span> this week
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-black text-text-primary mb-4 leading-tight">
+        Your website live in <span class="text-accent-teal">48h</span>.<br class="hidden sm:block"> Start with a message.
       </h2>
 
-      <p class="text-base sm:text-lg text-text-secondary mb-8 leading-relaxed">
-        Tell me about your business. I'll send you a free visual proposal within 24 hours so you can see how your website could look — no commitment, no upfront payment.
+      <p class="text-base sm:text-lg text-text-secondary mb-6 leading-relaxed">
+        Tell me about your business. I'll send you a free visual proposal in 24h — no commitment, no upfront payment.
       </p>
 
       <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%27m%20interested.%20Can%20we%20talk%3F"
          target="_blank"
          rel="noopener noreferrer"
-         class="group relative inline-flex items-center justify-center gap-4 w-full sm:w-auto px-8 py-5 rounded-2xl bg-[#25D366] text-white hover:bg-[#20BD5A] hover:scale-[1.02] shadow-xl shadow-[#25D366]/40 transition-all duration-300 mb-4 overflow-hidden"
+         class="cta-pulse inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#25D366] text-white hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/30 transition-all duration-300 mb-3"
          data-cta="final" onclick="fbq('track', 'Lead', {content_name: 'Final CTA', value: 400, currency: 'USD'});">
-        <span class="absolute inset-0 rounded-2xl ring-2 ring-white/40 animate-ping opacity-60"></span>
-        <span class="relative flex items-center justify-center w-11 h-11 rounded-full bg-white/15 shrink-0">
-          <svg class="w-6 h-6" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-white/15 shrink-0">
+          <svg class="w-5 h-5" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
         </span>
-        <span class="relative flex flex-col items-start text-left leading-tight">
-          <span class="text-lg font-black">Message Me Now</span>
-          <span class="text-xs font-medium text-white/85">I reply in under 10 minutes ⚡</span>
+        <span class="flex flex-col items-start text-left leading-tight">
+          <span class="text-base sm:text-lg font-extrabold">Message Me Now</span>
+          <span class="text-[11px] font-medium text-white/90 inline-flex items-center gap-1.5"><span class="live-dot"></span> Online · I reply in &lt;10 min</span>
         </span>
       </a>
+
+      <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-xs text-text-secondary/70 mb-4">
+        <span>✅ No upfront payment</span>
+        <span class="text-text-secondary/30">·</span>
+        <span>✅ 100% guarantee</span>
+        <span class="text-text-secondary/30">·</span>
+        <span>✅ Instant reply</span>
+      </div>
 
       <p class="text-sm text-text-secondary/70 mb-2">
         📞 No WhatsApp? <a href="tel:+17863709532" class="text-accent-teal font-semibold hover:underline" onclick="fbq('track', 'Contact', {content_name: 'Final Phone'});">+1 (786) 370-9532</a>
@@ -851,6 +958,16 @@
   <!-- ============ FOOTER ============ -->
   <footer class="px-4 py-10 bg-bg-dark border-t border-border-slate/50">
     <div class="max-w-4xl mx-auto text-center">
+      <!-- Footer WhatsApp CTA (last chance) -->
+      <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20want%20to%20start%20my%20professional%20website"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-[#25D366] text-white font-bold text-sm sm:text-base hover:bg-[#20BD5A] hover:scale-[1.02] shadow-lg shadow-[#25D366]/20 transition-all duration-300 mb-6"
+         data-cta="footer" onclick="fbq('track', 'Lead', {content_name: 'Footer CTA', value: 400, currency: 'USD'});">
+        <svg class="w-5 h-5" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+        <span>Message on WhatsApp Now</span>
+      </a>
+
       <img src="../src/logo.png" alt="Software Dynamic" class="h-8 mx-auto mb-4 opacity-80">
 
       <div class="flex flex-wrap justify-center items-center gap-3 text-sm text-text-secondary/80 mb-4">
@@ -888,7 +1005,10 @@
   </footer>
 
   <!-- ============ STICKY MOBILE CTA (WhatsApp + Call) ============ -->
-  <div class="sticky-cta bg-bg-dark border-t border-accent-teal/30 p-3 shadow-2xl">
+  <div class="sticky-cta bg-bg-dark/95 backdrop-blur-md border-t border-accent-teal/30 px-3 pt-2 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-2xl">
+    <p class="text-center text-[11px] text-text-secondary/80 mb-1.5 inline-flex items-center justify-center gap-1.5 w-full">
+      <span class="live-dot"></span> Online now · I reply in &lt;10 min
+    </p>
     <div class="flex items-center gap-2 max-w-2xl mx-auto">
       <a href="tel:+17863709532"
          class="flex items-center justify-center w-14 h-14 rounded-xl bg-card-slate border border-border-slate text-accent-teal hover:bg-card-slate/80 transition-colors shrink-0"
@@ -900,11 +1020,11 @@
       <a href="https://wa.me/17863709532?text=Hi%20Carlos%2C%20I%20want%20my%20free%20proposal"
          target="_blank"
          rel="noopener noreferrer"
-         class="flex items-center justify-center gap-2 flex-1 px-4 py-4 rounded-xl bg-[#25D366] text-white font-bold text-base hover:bg-[#20BD5A] shadow-lg transition-all duration-300"
+         class="cta-pulse flex items-center justify-center gap-2 flex-1 px-4 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-sm sm:text-base hover:bg-[#20BD5A] shadow-lg shadow-[#25D366]/25 transition-all duration-300"
          data-cta="sticky_mobile"
          onclick="fbq('track', 'Contact', {content_name: 'Sticky Mobile CTA'});">
-        <svg class="w-5 h-5" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
-        <span>Get Free Proposal</span>
+        <svg class="w-5 h-5 shrink-0" fill="currentColor" aria-hidden="true"><use href="#icon-wa"/></svg>
+        <span>My Free Proposal</span>
       </a>
     </div>
   </div>
